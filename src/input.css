@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero_1 {
+  background-position: center;
+  background-image: url(./img/hero_banner.jpg);
+  height: 653px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.slick-track {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slick-arrow {
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: aquamarine;
+}
+
+.slick-next {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-size: cover;
+  background-position: center;
+  background-image: url(./img/angle-right-solid\ \(1\).svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  z-index: 10000;
+}
+
+.slick-prev {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(./img/angle-left-solid\ \(1\).svg);
+  background-color: transparent;
+  z-index: 10000;
+}
+
+.slider {
+  position: relative;
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 15px;
+}
+
+.slick-dots button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #5656f4;
+  display: block;
+  rotate: 45deg;
+}
+
+.slick-dots .slick-active button {
+  background-color: red;
+}
+
+.hero {
+  position: relative;
+}
+
+.modal_block {
+  position: fixed;
+  padding: 15px;
+  display: none;
+  height: auto;
+}
+.modal_close {
+  display: none;
+}
+.modal_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cartBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
