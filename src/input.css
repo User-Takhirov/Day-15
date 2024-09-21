@@ -38,7 +38,8 @@
   background-image: url(./img/angle-right-solid\ \(1\).svg);
   background-color: transparent;
   background-repeat: no-repeat;
-  z-index: 10000;
+  /* z-index: 1; */
+  display: none;
 }
 
 .slick-prev {
@@ -51,7 +52,8 @@
   background-size: cover;
   background-image: url(./img/angle-left-solid\ \(1\).svg);
   background-color: transparent;
-  z-index: 10000;
+  /* z-index: 1; */
+  display: block;
 }
 
 .slider {
@@ -107,7 +109,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.cartBg {
+.cart_section {
   position: fixed;
   top: 0;
   left: 0;
@@ -119,3 +121,15 @@
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
 }
+.cart {
+  position: fixed;
+  padding: 15px;
+  display: none;
+  height: auto;
+}
+
+
+.open {
+display: block;
+}
+

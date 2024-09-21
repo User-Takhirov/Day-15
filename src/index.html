@@ -23,7 +23,8 @@
               <img src="./img/profile.svg" alt="#" />
               <p class="w-[87px]">My Profile</p>
             </div>
-            <div class="flex gap-[7px]">
+            <div class="shop flex relative gap-[7px]" id="shopcart">
+              <span class="counter w-[16px] h-[16px] bg-[red] rounded-[50%] flex justify-center items-center text-[#fff] absolute top-[-5px] right-[42px] text-[10px] "></span>
               <img src="./img/cart.svg" alt="#" />
               <a href="#"> Items</a>
             </div>
@@ -233,13 +234,18 @@
           </a>
         </div>
       </section>
-      <section class="cart_section">
+      <section class="cart_section hidden">
+        <button class="Cart_close w-[10%] h-[10%] bg-red-500">X</button>
         <div class="container">
-          <div class="cart_bg"></div>
-          <div class="cart_block">
-            <div class="cart"></div>
-          </div>
+          <div
+            class="fixed right-0 cart_block w-[900px] overflow-y-scroll bg-blue-500 h-[100%] top-0"
+          >
         </div>
+      </div>
+      <div class="">
+        <p class="totalPrice"></p>
+<p class="count"></p>
+      </div>
       </section>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
       <script src="././data/slick.js"></script>

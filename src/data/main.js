@@ -9,8 +9,14 @@ const modalDiv = document.querySelector(".modal_block");
 const modalBg = document.querySelector(".modal_bg");
 const ModalClose = document.querySelector(".modal_close");
 const cart = document.querySelector(".cart_section");
-const cartItems = document.querySelector(".cart");
-const cartBg = document.querySelector(".cart_bg");
+const shop = document.querySelector(".shop");
+const counter = document.querySelector(".counter");
+const CartClose = document.querySelector(".Cart_close");
+const cartBlock = document.querySelector(".cart_block");
+
+const count = document.querySelector(".count");
+const slick = document.getElementsByClassName("slick-prev ");
+slick.id = "angle";
 
 $(".hero").slick({
   slidesToShow: 1,
@@ -90,14 +96,25 @@ itemList.addEventListener("click", (e) => {
   }
 });
 
+const saveLocal = (item) => {
+  const oldClothes = JSON.parse(localStorage.getItem("Clothes")) || [];
+  const singleitem = oldClothes.some((data) => data.id === item.id);
+
+  if (!singleitem) {
+    item.user_count = 1;
+    localStorage.setItem("Clothes", JSON.stringify([item, ...oldClothes]));
+  }
+  // AddedLocal();
+};
+
 //
 const AddedLocal = () => {
   const data = JSON.parse(localStorage.getItem("Clothes") || []);
-  cartItems.innerHTML = data
+  cartBlock.innerHTML = data
     ?.map(
       (
         item
-      ) => `<div class="flex items-center border border-red-500  gap-[30px] py-[20px] px-[20px] w-[750px] justify-center mx-auto mb-[10px]">
+      ) => `<div class="flex items-center border border-red-500 bg-white  gap-[30px] py-[20px] px-[20px] w-[750px] justify-center mx-auto my-[20px]">
     
       <img class="w-[200px] h-[200px]" src="${item.image}" alt="#" />
       <div class="w-[500px]">
@@ -121,23 +138,14 @@ const AddedLocal = () => {
         item.id
       }">Delete</button>
       </div>
-
-
     </div>
   `
     )
     .join("");
+    counter.textContent=`${data.length}`
+  count.textContent = `Items in cart: ${data.length}`;
 };
 AddedLocal();
-
-const saveLocal = (item) => {
-  const oldClothes = JSON.parse(localStorage.getItem("Clothes")) || [];
-  const singleitem = oldClothes.some((data) => data.id === item.id);
-  if (!singleitem) {
-    localStorage.setItem("Clothes", JSON.stringify([item, ...oldClothes]));
-  }
-  AddedLocal();
-};
 
 //
 const OpenModal = (item) => {
@@ -167,6 +175,7 @@ const OpenModal = (item) => {
   const StorageBtn = document.querySelector(".Local_btn");
   StorageBtn.addEventListener("click", () => {
     saveLocal(item);
+    AddedLocal();
   });
 };
 modal.addEventListener("click", async (e) => {
@@ -183,10 +192,23 @@ ModalClose.addEventListener("click", async () => {
   modalBg.style.display = "none";
 });
 
-cartItems.addEventListener("click", (e) => {
+cartBlock.addEventListener("click", (e) => {
   let data = JSON.parse(localStorage.getItem("Clothes") || []);
   const id = e.target.dataset.del;
   data = data.filter((item) => item.id != id);
   localStorage.setItem("Clothes", JSON.stringify(data));
   AddedLocal(data);
+});
+shop.addEventListener("click", () => {
+  cartBlock.classList.add("open");
+  cart.style.display = "block";
+  CartClose.style.display = "block";
+  cartBlock.style.display = "block";
+  slick.className = "close";
+});
+
+CartClose.addEventListener("click", async () => {
+  cart.style.display = "none";
+  CartClose.style.display = "none";
+  cartBlock.style.display = "none";
 });
