@@ -96,6 +96,10 @@ itemList.addEventListener("click", (e) => {
   }
 });
 
+//
+
+//
+
 const saveLocal = (item) => {
   const oldClothes = JSON.parse(localStorage.getItem("Clothes")) || [];
   const singleitem = oldClothes.some((data) => data.id === item.id);
@@ -103,6 +107,7 @@ const saveLocal = (item) => {
   if (!singleitem) {
     item.user_count = 1;
     localStorage.setItem("Clothes", JSON.stringify([item, ...oldClothes]));
+    
   }
   // AddedLocal();
 };
@@ -114,7 +119,7 @@ const AddedLocal = () => {
     ?.map(
       (
         item
-      ) => `<div class="flex items-center border border-red-500 bg-white  gap-[30px] py-[20px] px-[20px] w-[750px] justify-center mx-auto my-[20px]">
+      ) => `<div class="flex rounded-[15px] items-center border border-red-500 bg-white  gap-[30px] py-[20px] px-[20px] w-[750px] justify-center mx-auto my-[20px]">
     
       <img class="w-[200px] h-[200px]" src="${item.image}" alt="#" />
       <div class="w-[500px]">
@@ -134,7 +139,7 @@ const AddedLocal = () => {
   <p class="font-[500] text-[18px] leading-[150%] text-[#223263] mb-[15px] ">Rating : ${
     item.rating.rate
   }/5</p>
-      <button class="delBtn py-[10px] px-[20px] bg-red-500 text-white" data-del="${
+      <button class="delBtn py-[10px] rounded-[10px] px-[20px] bg-red-500 text-white" data-del="${
         item.id
       }">Delete</button>
       </div>
@@ -142,7 +147,7 @@ const AddedLocal = () => {
   `
     )
     .join("");
-    counter.textContent=`${data.length}`
+  counter.textContent = `${data.length}`;
   count.textContent = `Items in cart: ${data.length}`;
 };
 AddedLocal();
@@ -153,13 +158,13 @@ const OpenModal = (item) => {
   ModalClose.style.display = "block";
   modalBg.style.display = "block";
   modalDiv.innerHTML = `
-  <div class="flex gap-[30px]">
+  <div class="flex items-center gap-[30px] py-[20px] px-[20px]">
   <img class="w-[250px] h-[200px]" src="${item.image}" alt="#" />
   <div>
-  <h1 class="text-white text-[25px]">${item.title}</h1>
-  <p>${item.description}</p>
-  <p>${item.rating.rate}</p>
-   <div class="flex items-center gap-[13px] justify-center mb-[10px]">
+  <h1 class="text-blue-500 text-[25px] font-[700] mb-[5px]">${item.title}</h1>
+  <p class="text-white text-[25px]">${item.description}</p>
+  <p class="text-[20px] text-red-500 font-[700]">Rating :  ${item.rating.rate}/5</p>
+   <div class="flex items-center gap-[13px] justify-center mb-[10px] font-700] text-[20px]">
   <p class="font-[700] text-[18px] leading-[180%] text-[#40bfff]">
   $${Math.round(item.price * 0.76)}
 </p>
@@ -168,7 +173,10 @@ const OpenModal = (item) => {
   } </p>
   <p class="font-[700] text-[14px] leading-[150%] text-[#fb7181] ">24% Off</p>
   </div>
-  <button class="Local_btn" data-add="${item.id}">Add</button>
+  <div class="text-right ">
+  
+  <button class="Local_btn py-[10px] px-[20px] bg-green-500 text-white rounded-[10px]" data-add="${item.id}">Add</button>
+  </div>
   </div>
   </div>
   `;

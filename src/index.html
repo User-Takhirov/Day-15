@@ -24,7 +24,9 @@
               <p class="w-[87px]">My Profile</p>
             </div>
             <div class="shop flex relative gap-[7px]" id="shopcart">
-              <span class="counter w-[16px] h-[16px] bg-[red] rounded-[50%] flex justify-center items-center text-[#fff] absolute top-[-5px] right-[42px] text-[10px] "></span>
+              <span
+                class="counter w-[16px] h-[16px] bg-[red] rounded-[50%] flex justify-center items-center text-[#fff] absolute top-[-5px] right-[42px] text-[10px]"
+              ></span>
               <img src="./img/cart.svg" alt="#" />
               <a href="#"> Items</a>
             </div>
@@ -220,12 +222,12 @@
             class="modal_block fixed bg-[#7f38f0ba] w-[70%] h-[30px] top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] rounded-[20px]"
           ></div>
           <button
-            class="modal_close fixed top-[35%] z-[1000] translate-y-[-10%] left-[82%] text-white px-[10px] rounded-[15px]"
+            class="modal_close fixed top-[29%] z-[1000] translate-y-[-40%] left-[82%] text-white px-[10px] rounded-[15px]"
           >
-            <img class="w-[30px] h-[30px]" src="./img/x.svg" alt="#" />
+            <img class="w-[40px] h-[40px]" src="./img/x.svg" alt="#" />
           </button>
         </div>
-        <div class="container">
+        <div class="container mb-[115px]">
           <a
             href="#"
             class="font-[500] text-[20px] text-[#33a0ff] border-b-[2px] border-b-[#33a0ff] pb-[5px] flex w-[115px] mx-auto mt-[24px]"
@@ -235,21 +237,143 @@
         </div>
       </section>
       <section class="cart_section hidden">
-        <button class="Cart_close w-[10%] h-[10%] bg-red-500">X</button>
+        <button class="Cart_close  w-[50px] h-[50px] ml-[20px] mt-[20px] bg-red-500 text-white rounded-[50%]">X</button>
         <div class="container">
           <div
             class="fixed right-0 cart_block w-[900px] overflow-y-scroll bg-blue-500 h-[100%] top-0"
-          >
+          ></div>
+        </div>
+        <div class="">
+         
+          <p class="count text-white font-[600] text-[18px] ml-[20px] mt-[20px]"></p>
+        </div>
+      </section>
+      <section class="mb-[136px]">
+        <div class="container">
+          <ul class="flex justify-center gap-[260px] items-center">
+            <li class="text-center w-[193px]">
+              <div class="mb-[43px]">
+                <img class="mx-auto" src="./img/track.svg" alt="" />
+              </div>
+              <h3 class="font-[500] text-[27px] text-[#22262a]">
+                FREE SHIPPING
+              </h3>
+            </li>
+
+            <li class="text-center w-[193px]">
+              <div class="mb-[43px]">
+                <img class="mx-auto" src="./img/refund.svg" alt="" />
+              </div>
+              <h3 class="font-[500] text-[27px] text-[#22262a]">100% REFUND</h3>
+            </li>
+            <li class="text-center w-[193px]">
+              <div class="text-center mb-[43px]">
+                <img class="mx-auto" src="./img/support.svg" alt="" />
+              </div>
+              <h3 class="font-[500] text-[27px] text-[#22262a]">
+                SUPPORT 24/7
+              </h3>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="mb-[51px]">
+        <div class="container">
+          <div class="flex items-center justify-center">
+            <input
+              type="text"
+              placeholder="Search query..."
+              class="border py-[20px] pl-[21px] pr-[50px] w-[570px]"
+            />
+            <button
+              class="border font-[600] text-[20px] text-white py-[18px] px-[28px] bg-[#40bfff]"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer_block">
+          <div class="footer_logo_block">
+            <div class="footer_logo_flex">
+              <img src="./img/footer_logo.svg" alt="#" />
+              <h3 class="footer_logo_title">E-Comm</h3>
+            </div>
+            <p class="footer_text">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever.Since the 1500s, when an unknown printer.
+            </p>
+          </div>
+          <div class="follow_us">
+            <p class="footer_sub_title">Follow Us</p>
+            <p class="footer_text">
+              Since the 1500s, when an unknown printer took a galley of type and
+              scrambled.
+            </p>
+            <div class="footer_media flex items-center">
+              <a class="footer_media_link" href="#">
+                <img src="./img/facebook.svg" alt="#" />
+              </a>
+              <a class="footer_media_link" href="#">
+                <img src="./img/twitter.svg" alt="#" />
+              </a>
+            </div>
+          </div>
+          <div class="contact_us">
+            <p class="footer_sub_title">Contact Us</p>
+            <div>
+              <div class="contact_list">
+                <p class="contact_text">E-Comm , 4578</p>
+              </div>
+              <div>
+                <p class="contact_text">Marmora Road,</p>
+              </div>
+              <div>
+                <p class="contact_text">Glasgow D04 89GR</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="footer_bottom">
+          <p class="footer_bpttom_text">
+            © 2018 Ecommerce theme by www.bisenbaev.com
+          </p>
+          <ul class="footer_bottom_list">
+            <li class="footer_bottom_item">
+              <a class="footer_bottom_link" href="#">
+                <img class="footer_bottom_img" src="./img/union.svg" alt="#" />
+              </a>
+            </li>
+            <li class="footer_bottom_item">
+              <a class="footer_bottom_link" href="#">
+                <img
+                  class="footer_bottom_img"
+                  src="./img/master_card.svg"
+                  alt="#"
+                />
+              </a>
+            </li>
+            <li class="footer_bottom_item">
+              <a class="footer_bottom_link" href="#">
+                <img class="footer_bottom_img" src="./img/paypal.svg" alt="#" />
+              </a>
+            </li>
+            <li class="footer_bottom_item">
+              <a class="footer_bottom_link" href="#">
+                <img class="footer_bottom_img" src="./img/visa.svg" alt="#" />
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="">
-        <p class="totalPrice"></p>
-<p class="count"></p>
-      </div>
-      </section>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-      <script src="././data/slick.js"></script>
-      <script type="module" src="./data/main.js"></script>
-    </main>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="././data/slick.js"></script>
+    <script type="module" src="./data/main.js"></script>
   </body>
 </html>
