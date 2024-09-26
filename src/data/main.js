@@ -150,7 +150,7 @@ const AddedLocal = () => {
   counter.textContent = `${data.length}`;
   count.textContent = `Items in cart: ${data.length}`;
 };
-AddedLocal();
+// AddedLocal();
 
 //
 const OpenModal = (item) => {
